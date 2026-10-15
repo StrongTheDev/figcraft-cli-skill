@@ -6,3 +6,6 @@ Ensure you have installed FigCraft from [storytold/figcraft](https://github.com/
 ```sh
 npx skills add StrongTheDev/figcraft-cli-skill
 ```
+
+---
+Contributions are welcome
