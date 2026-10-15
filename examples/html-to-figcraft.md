@@ -47,7 +47,7 @@ HTML apps encode screens as conditionals (`isHome`, `isSettings`, `fabOpen`, con
 
 ## 5. Build and check
 
-1. Write `build.js` with tokens, component helpers (`switch`, `button`, `chip`, `card`, `field`, `segmented`), then screens. Grid-lay frames (e.g. x-pitch 470, y-pitch 1024) with a text label above each.
+1. Write `build.js` with tokens, component helpers (`switch`, `button`, `chip`, `card`, `field`, `segmented`), then screens. Grid-lay frames (e.g. x-pitch 470, y-pitch 1024) and give each a descriptive name (`Home — add menu open`) — the canvas shows frame names above frames, so no separate text labels.
 2. `b.save('out.figcraft')` — the builder verifies ids.
 3. `render … --scale 0.5`, then `export … --node <id> --scale 1` for dense screens. Compare against the HTML in a browser; fix and regenerate.
 

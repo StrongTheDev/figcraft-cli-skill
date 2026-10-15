@@ -2,7 +2,7 @@
  * Example: "Suggest a desktop dashboard screen for a habit-tracking app" → a new .figcraft file.
  * Run:  node examples/desktop-dashboard.js out.figcraft
  * Shows: tokens as constants, auto-layout (row/column, fill/hug), cards, shadows, icons, text,
- *        labelling frames on the canvas, then render for visual review.
+ *        descriptive frame names (the canvas shows them above each frame), then render for visual review.
  */
 const path = require('path');
 const { Builder, render, alpha } = require('../scripts/figcraft-builder');
@@ -13,11 +13,8 @@ const T = { bg: '#f6f7fb', card: '#ffffff', ink: '#1b1f2a', muted: '#6b7280', br
 const b = new Builder({ fonts: { body: 'Inter', heading: 'Inter' } }); // check `text.fonts` for what is installed
 b.page('Desktop', '#e9eaf0');
 
-// Label above the frame (no parent → placed on the page)
-b.text(null, 'Dashboard — 1440×900', { x: 0, y: -32, size: 14, weight: 'SemiBold', color: '#444' });
-
-// Root screen: row = sidebar + main
-const screen = b.frame(null, 'Dashboard', { width: 1440, height: 900, fill: T.bg, layout: 'row', clip: true, radius: 12 });
+// Root screen: row = sidebar + main. The frame name doubles as its caption on the canvas — no separate label layer needed.
+const screen = b.frame(null, 'Dashboard — 1440×900', { width: 1440, height: 900, fill: T.bg, layout: 'row', clip: true, radius: 12 });
 
 // Sidebar
 const side = b.frame(screen, 'Sidebar', { width: 240, height: 'fill', fill: T.card, layout: 'column', padding: [24, 16, 24, 16], gap: 6, stroke: { color: T.line, width: 1 } });

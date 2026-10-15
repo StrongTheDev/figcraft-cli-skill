@@ -27,8 +27,7 @@ console.log('reference background:', bg);
 
 // 2. Build the new screen.
 const b = Builder.forFile(input);
-b.text(null, 'Alarm ringing (new)', { x: right + 80, y: -30, size: 14, weight: 'SemiBold', color: '#474238' });
-const s = b.frame(null, 'Alarm ringing', { x: right + 80, y: ref.absoluteBounds.y, width: ref.width, height: ref.height, fill: bg, radius: refDetail.cornerRadius, clip: true, layout: 'column', align: 'center', justify: 'center', gap: 20, padding: 32 });
+const s = b.frame(null, 'Alarm ringing (new)', { x: right + 80, y: ref.absoluteBounds.y, width: ref.width, height: ref.height, fill: bg, radius: refDetail.cornerRadius, clip: true, layout: 'column', align: 'center', justify: 'center', gap: 20, padding: 32 });
 b.icon(s, 'bell', 72, '#8c491a', { strokeWidth: 2.5 });
 b.text(s, '7:00 AM', { size: 56, weight: 'Bold', color: '#201e1d', font: 'heading' });
 b.text(s, 'Tokyo Morning', { size: 18, color: alpha('#201e1d', 0.7) });

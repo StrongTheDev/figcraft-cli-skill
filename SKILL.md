@@ -30,7 +30,8 @@ It usually lives in FigCraft's install folder (on Windows commonly `C:\Program F
 
 ## 4. Layout conventions that make designs look right
 
-- Lay screens on the canvas in a grid (e.g. 390-wide frames at an x-pitch of 470) with a small text label above each frame (`text` with no parent). Group states of one screen next to each other (default / empty / error / dialog open).
+- Lay screens on the canvas in a grid (e.g. 390-wide frames at an x-pitch of 470) and group the states of one screen next to each other (default / empty / error / dialog open).
+- **Name frames descriptively instead of adding text labels above them.** Figma draws every top-level frame's name above it on the canvas, and FigCraft is Figma-like (confirm in the app if it matters), so a separate label is redundant — it adds layers, drifts out of sync when frames move or get renamed, and shows up in exports and layer lists. Put the caption in the frame name itself, e.g. `Home — 820×1180`, `Checkout / Error state`, `Dialog — delete alarm`. (The name is not drawn in `render`/`export` PNGs; only in the app's canvas. If the user needs captions *inside* a rendered image — a presentation board, a printed sheet — that is the one case for a real text layer.)
 - Model interactive states (hover, open menu, selected tab, modal) as **separate frames**; model dialogs as an absolute full-size translucent frame with the dialog centred inside.
 - CSS-style margin doesn't exist: use `gap`, parent `padding`, or `b.spacer()`.
 - Alpha is part of the colour: `#201e1d80` = 50% (works for fills, strokes, text). Use it for muted text and dividers instead of separate greys.
